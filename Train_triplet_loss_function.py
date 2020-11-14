@@ -1,5 +1,5 @@
 from fr_utils import *
-from inception_network import *
+from deep_learning_block_embeddings import *
 
 
 def triplet_loss(y_true, y_pred, alpha=0.3):
