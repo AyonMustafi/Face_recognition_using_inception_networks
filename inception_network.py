@@ -34,7 +34,7 @@ def inception_block_1a(X):
     X_5x5 = BatchNormalization(axis=1, epsilon=0.00001, name='inception_3a_5x5_bn2')(X_5x5)
     X_5x5 = Activation('relu')(X_5x5)
 
-    X_pool = MaxPooling2D(pool_size=3, strides=2, data_format='channels_first')(X)
+    X_pool = MaxPooling2D(pool_size=3, strides=2, data_format='channels_first')(X)  #https://keras.io/api/layers/pooling_layers/max_pooling2d/
     X_pool = Conv2D(32, (1, 1), data_format='channels_first', name='inception_3a_pool_conv')(X_pool)
     X_pool = BatchNormalization(axis=1, epsilon=0.00001, name='inception_3a_pool_bn')(X_pool)
     X_pool = Activation('relu')(X_pool)
