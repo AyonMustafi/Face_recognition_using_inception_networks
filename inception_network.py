@@ -18,10 +18,10 @@ def inception_block_1a(X):
     Implementation of an inception block
     """
     
-    X_3x3 = Conv2D(96, (1, 1), data_format='channels_first', name ='inception_3a_3x3_conv1')(X)
-    X_3x3 = BatchNormalization(axis=1, epsilon=0.00001, name = 'inception_3a_3x3_bn1')(X_3x3)
-    X_3x3 = Activation('relu')(X_3x3)
-    X_3x3 = ZeroPadding2D(padding=(1, 1), data_format='channels_first')(X_3x3)
+    X_3x3 = Conv2D(96, (1, 1), data_format='channels_first', name ='inception_3a_3x3_conv1')(X)  #https://keras.io/api/layers/convolution_layers/convolution2d/
+    X_3x3 = BatchNormalization(axis=1, epsilon=0.00001, name = 'inception_3a_3x3_bn1')(X_3x3)  #https://keras.io/api/layers/normalization_layers/batch_normalization/
+    X_3x3 = Activation('relu')(X_3x3)   #https://keras.io/api/layers/activations/
+    X_3x3 = ZeroPadding2D(padding=(1, 1), data_format='channels_first')(X_3x3)   #https://keras.io/api/layers/reshaping_layers/zero_padding2d/
     X_3x3 = Conv2D(128, (3, 3), data_format='channels_first', name='inception_3a_3x3_conv2')(X_3x3)
     X_3x3 = BatchNormalization(axis=1, epsilon=0.00001, name='inception_3a_3x3_bn2')(X_3x3)
     X_3x3 = Activation('relu')(X_3x3)
@@ -45,7 +45,7 @@ def inception_block_1a(X):
     X_1x1 = Activation('relu')(X_1x1)
         
     # CONCAT
-    inception = concatenate([X_3x3, X_5x5, X_pool, X_1x1], axis=1)
+    inception = concatenate([X_3x3, X_5x5, X_pool, X_1x1], axis=1)   #https://keras.io/api/layers/merging_layers/concatenate/
 
     return inception
 
