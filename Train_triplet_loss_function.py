@@ -1,4 +1,4 @@
-from fr_utils import *
+from inception_network import *
 from deep_learning_block_embeddings import *
 
 
@@ -29,8 +29,8 @@ def triplet_loss(y_true, y_pred, alpha=0.3):
 
 def main():
     FRmodel = faceRecoModel(input_shape=(3, 96, 96))
-    FRmodel.compile(optimizer='adam', loss=triplet_loss, metrics=['accuracy'])
-    FRmodel.save('face-rec_Google.h5')
+    FRmodel.compile(optimizer='adam', loss=triplet_loss, metrics=['accuracy']) #Train the model
+    FRmodel.save('face-rec_Google.h5')  #Save the parameters
     print_summary(model)
 
 main()
