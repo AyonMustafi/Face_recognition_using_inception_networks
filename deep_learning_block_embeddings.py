@@ -89,7 +89,7 @@ WEIGHTS = [
 ]
 
 conv_shape = {
-  'conv1': [64, 3, 7, 7],
+  'conv1': [64, 3, 7, 7],  #batch_shape + (channels, rows, cols) if data_format='channels_first'
   'conv2': [64, 64, 1, 1],
   'conv3': [192, 64, 3, 3],
   'inception_3a_1x1_conv': [64, 192, 1, 1],
