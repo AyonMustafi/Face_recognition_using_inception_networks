@@ -46,7 +46,7 @@ def conv2d_bn(x,
               cv2_out=None,
               cv2_filter=(3, 3),
               cv2_strides=(1, 1),
-              padding=None):
+              padding=None):  #An utility program to do convolution,batch normalization and activations using single function
     num = '' if cv2_out == None else '1'
     tensor = Conv2D(cv1_out, cv1_filter, strides=cv1_strides, data_format='channels_first', name=layer+'_conv'+num)(x)
     tensor = BatchNormalization(axis=1, epsilon=0.00001, name=layer+'_bn'+num)(tensor)
