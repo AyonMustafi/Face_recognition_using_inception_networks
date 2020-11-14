@@ -5,7 +5,7 @@ import glob
 from scipy.spatial import distance
 from imutils import face_utils
 from keras.models import load_model
-from fr_utils import *
+from deep_learning_block_embeddings import *
 from inception_blocks_v2 import *
 
 detector = dlib.get_frontal_face_detector()
