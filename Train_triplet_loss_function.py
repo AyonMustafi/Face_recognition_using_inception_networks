@@ -30,7 +30,7 @@ def triplet_loss(y_true, y_pred, alpha=0.3):
 def main():
     FRmodel = faceRecoModel(input_shape=(3, 96, 96))
     FRmodel.compile(optimizer='adam', loss=triplet_loss, metrics=['accuracy']) #https://keras.io/api/models/model/
-    FRmodel.save('face-rec_Google.h5')  #Save the parameters
+    FRmodel.save('face-rec_Google.h5')  #Save the parameters - https://www.tensorflow.org/guide/keras/save_and_serialize
     print_summary(model)
 
 main()
