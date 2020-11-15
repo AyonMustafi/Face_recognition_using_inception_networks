@@ -74,7 +74,7 @@ def initialize():
     # load all the images of individuals to recognize into the database
     for file in glob.glob("images/*"):
         identity = os.path.splitext(os.path.basename(file))[0]
-        database[identity] = fr_utils.img_path_to_encoding(file, FRmodel)
+        database[identity] = deep_learning_block_embeddings.img_path_to_encoding(file, FRmodel)
     return database
 
 
