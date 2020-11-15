@@ -269,11 +269,11 @@ def faceRecoModel(input_shape):
     
     # Top layer
     X = AveragePooling2D(pool_size=(3, 3), strides=(1, 1), data_format='channels_first')(X)
-    X = Flatten()(X)
+    X = Flatten()(X)  #https://keras.io/api/layers/reshaping_layers/flatten/
     X = Dense(128, name='dense_layer')(X)
     
     # L2 normalization
-    X = Lambda(lambda  x: K.l2_normalize(x,axis=1))(X)
+    X = Lambda(lambda  x: K.l2_normalize(x,axis=1))(X)  #https://keras.io/api/layers/core_layers/dense/
 
     # Create model instance
 
